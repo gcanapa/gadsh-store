@@ -22,7 +22,13 @@ a{
     background-color: rgba(0,0,0,0.4);
     background-blend-mode: color;
 }
-
+    .container-logo-menu{
+        width: 80%;
+        height: 15px;
+        display: flex;
+        justify-content: space-between;
+        visibility: hidden;
+    }
 .navbar-container{
     display: flex;
     width: 80%;
@@ -48,6 +54,9 @@ a{
     font-size: 1.2rem;
 }
 #menu-mobile{
+    visibility: hidden;
+}
+#menu-mobile-close{
     visibility: hidden;
 }
 #image{
@@ -166,11 +175,10 @@ a{
 }  
 
 @media(max-width: 600px) {
-    #navbar{
-        width: 100%;
-    }
+
     .navbar-container{
         width: 100%;
+        visibility: hidden;
     }
     .navbar-items{
         visibility: hidden; 
@@ -192,17 +200,38 @@ a{
         overflow: hidden;
         text-align: center;
     }
-    #navbar #menu-mobile{
-        padding-top: 30px;
-        font-size: 1.3rem;
-    }
     #navbar h1{
         margin-left: 5%;
+    }
+    .container-logo-menu{
+        visibility: visible;
+        width: 80%;
+        height: 6%;
     }
     #menu-mobile{
         visibility: visible;
         margin-left: 35%;
         margin-bottom: 6%;
+    }
+    #navbar #menu-mobile{
+        padding-top: 30px;
+        font-size: 1.3rem;
+        margin-left: 50%;
+    }
+    #navbar.active #menu-mobile{
+        visibility: hidden;
+    }
+    #menu-mobile-close{
+        visibility: hidden;
+        padding-top: 11%;
+        margin-left: -5%;
+    }
+    #navbar.active #menu-mobile-close{
+        visibility: visible;
+        width: 30px;
+        padding: 30px;
+        font-size: 1.5rem;
+        margin-left: -15.3%;
     }
     #image{
         height: 65vh;
